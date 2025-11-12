@@ -1,0 +1,35 @@
+.cover {
+  padding-bottom: 20px;
+}
+.site-title {
+  font-size: clamp(38px, 5vw, 42px) !important;
+  line-height: 1.2;
+  @media(min-width: 768px) {
+    margin-top: 60px;
+  }
+}
+.slide {
+  max-width: 1340px;
+}
+.address-input  {
+  max-width: 800px !important;
+}
+.submit-btn {
+  width: 140px !important;
+  min-width: unset !important;
+  @media(max-width: 840px) {
+    width: 100% !important;
+  }
+}
+
+.page-content {
+  .md-form {
+    form {
+      .submit-content {
+        .submit {
+          color: #111 !important;
+        } 
+      }
+    }
+  }
+}

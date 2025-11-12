@@ -1,0 +1,39 @@
+.md-cta.layout1.mg-bg, .md-hero.layout2.mg-bg {   
+  .f-col {
+    max-width: 800px;
+  }    
+  .site-title {
+    h2 {
+      line-height: 1.2;
+      text-wrap: balance;
+      font-size: clamp(28px, 7vw, 52px) !important;        
+      span {
+        font-size: 1em !important;
+      }
+    }
+  }
+  .site-subtitle {
+    opacity: .85;
+  } 
+}
+
+// BANNER AT THE TOP OF EACH PAGE
+.md-hero.layout2.mg-bg {
+  .banner.single {
+    padding-block: 140px 70px;
+    min-height: 70vh !important;    
+    .banner-button-v2 {      
+      gap: 7px !important;
+    }
+  }
+}
+
+// HERO CTA
+.md-cta.layout1.mg-bg {
+  .banner.single {
+    padding-block: 80px;
+    @media(max-width: 575px) {
+    padding-block: 60px;
+    }
+  }
+}

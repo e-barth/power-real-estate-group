@@ -1,0 +1,138 @@
+.button-more {
+  text-transform: uppercase;
+  transition: all .25s ease-out !important;
+}
+
+.home.template1 .page-content {
+
+  .md-hero {
+    .banner {
+      min-height: 85vh !important;
+    }
+    .media-content-search-group {
+      padding-top: 50px;
+      @media(max-width: 575px) {
+        row-gap: 30px;
+      }
+    }
+    .title-text {
+      .site-title {
+        font-size: calc(52px + 1vw) !important;
+        line-height: .7;
+        @media(max-width: 575px) {
+          text-align: center;
+        }
+      }
+      .site-subtitle {
+        @media(max-width: 575px) {
+          font-size: 18px !important;
+          text-align: center;
+        }
+      }      
+    }
+    .tab-header {
+      width: 100%;
+      height: auto;
+      ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: transparent;
+        gap: 5px;
+        @media(max-width: 575px) {
+          grid-template-columns: 1fr;
+        }
+        li {
+          width: 100%;
+          text-transform: uppercase;
+          transition: all .25s ease-out;
+          @media(min-width: 576px) {
+            $size: 55px;
+            line-height: $size;
+            min-height: $size;            
+          }
+          &:nth-child(2) {
+            background-color: hsl(212, 93%, 45%);
+          }
+          &:nth-child(3) {
+            background-color: hsl(212, 93%, 35%);
+          }
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+    }
+    .tab-body {
+      margin-top: 20px;
+      .search-category {
+        flex-wrap: wrap;
+        .keyword {
+          @media(max-width: 575px) {
+            width: 100%;  
+          }
+        }
+        .keyword-submit {
+          text-transform: uppercase;
+          width: calc((100% / 3) / 2 - 1.66px);
+          @media(max-width: 575px) {
+            width: 100%;  
+          }
+        }
+      }
+    }
+  }
+
+  .md-featured-area.layout7  {
+    .left-content {
+      padding-right: 200px;
+    }
+    .list-wrap {
+      row-gap: 10px;
+    }
+    .list-item {       
+      &:before {
+        display: none;
+      }
+      .featured-area-item {
+        .item-left {
+          .img-box {
+            border-radius: 50%;
+            $size: 22px;
+            width: $size;
+            height: $size;
+            min-width: $size;
+          }
+          .featured-area-item-title {
+            font-size: 16px !important;
+          }
+        }
+      } 
+    }
+  }
+
+  .md-featured-area.layout8 {
+    .featured-area-container {
+      max-width: 1440px;
+      margin-inline: auto;
+    }
+    .featured-area-item {
+      height: 100%;
+      aspect-ratio: 3/2;
+    }
+  }
+  
+  #contact {
+    scroll-margin-top: -500px !important;
+  }
+}
+
+
+// Estilo que já existia na página. Checar se ainda é valido, pois troquei o bloco de testimonials.
+// .social-container {
+//     width: 100%;
+//     height: 50px;
+//     display: flex;
+//     align-items: center;
+//     background: #232a3d;
+// }

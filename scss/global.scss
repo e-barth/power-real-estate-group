@@ -1,0 +1,261 @@
+@import 'variables';
+@import 'icons';
+
+// HEADER
+header {
+  .head-menu {
+    @media(min-width: 601px) {
+      justify-content: center !important;
+    }
+    @media(max-width: 601px) {
+      display: flex !important;
+      flex-direction: column;
+    } 
+    .download-closely {
+      @media(max-width: 601px) {
+        order: 1;
+      }
+    }   
+  }
+}
+
+// FORM
+#contact {
+  scroll-margin-top: 120px;
+  @media(max-width: 575px) {
+    scroll-margin-top: 90px;
+  }
+}
+.md-form.layout3.mg-bg {  
+  .site-title {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+  form {
+    max-width: 800px;
+    margin-inline: auto;
+    .input-content {
+      display: flex;
+      flex-direction: column;
+      margin-inline: 0;
+    }
+    .basic-info {
+      width: 100% !important;
+      margin-inline: 0;  
+    }
+    .message {
+      width: 100% !important;
+      margin-inline: 0;
+      textarea {     
+        min-height: 100px;
+      }
+    }
+    .submit-content {
+      display: flex;
+      justify-content: center;       
+      .submit {
+        color: #fff;
+      }      
+    }
+  }
+}
+
+// FOOTER
+// footer {
+//   .share-links {
+//     .share-item {
+//       border-color: #fff !important;
+//       i {
+//         color: #fff !important;
+//       }
+//     }
+//   }
+//   .detail {
+//     @media(min-width: 576px) {
+//       flex-flow: row wrap !important;
+//       justify-content: center;
+//     }
+//     .site-title {
+//       width: 100%;
+//       &:nth-of-type(2) {
+//         display: none;
+//       }
+//     }
+//     .detail-addr {
+//       margin-top: 20px !important;
+//       margin-bottom: 15px;      
+//       width: 100% !important;      
+//     }
+//     .site-p.underline {   
+//       text-decoration: none !important;
+//       padding-inline: 3px !important;
+//       margin-top: 7px !important;
+//       @media(max-width: 575px) {
+//         width: 100%;
+//       }
+//       a {
+//         padding-block: 15px;
+//         padding-right: 15px;
+//         background-color: var(--primary);
+//         min-width: 280px;
+//         height: 56px;
+//         @media(max-width: 575px) {
+//           width: 100%;
+//         }
+//         display: block;
+//         align-content: center;
+//         transition: all .25s ease-out;
+//         position: relative;
+//         &:before {
+//           content: '';
+//           position: absolute;          
+//           top: 50%;
+//           transform: translateY(-50%);
+//           $size: 26px;
+//           width: $size;
+//           height: $size;
+//           background-position: center;
+//           background-repeat: no-repeat;
+//           background-size: contain;
+//         }
+//         &:hover {
+//           background-color: var(--primary-hover);
+//         }
+//       }
+//       &:nth-of-type(1) {
+//         font-size: 14px !important;
+//         a {
+//           padding-left: 45px;
+//           &:before {
+//             background-image: $phone;    
+//             left: calc(50% - 74px);       
+//           }
+//         }        
+//       }
+//       &:nth-of-type(2) {
+//         font-size: 16px !important;
+//         a {
+//           padding-left: 42px;
+//           &:before {
+//             background-image: $email;  
+//             left: calc(50% - 118px);           
+//           }
+//         }        
+//       }
+//     }
+//   }
+//   .bottom-content {
+//     .mls-declaimer-container-v2 {
+//       max-width: 900px;
+//       margin-inline: auto
+//     }
+//     .site-p {      
+//       color: rgba(255,255,255,.7) !important;
+//       font-size: 12px !important;      
+//     }
+//   }
+// }
+
+
+// FOOTER
+.md-footer {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    .bottom-content {
+      order: 0;
+      .agent-name {
+        display: none;
+      }
+      .phone-email {
+        row-gap: 20px !important;
+        flex-direction: column !important;
+      }
+      .detail-phone, .detail-email {
+        &:before {
+          display: none;
+        }
+        a {
+          //padding-block: 15px;
+          //padding-right: 15px;
+          //background-color: var(--primary);
+          //min-width: 280px;
+          //height: 50px;
+          // @media(max-width: 575px) {
+          //   width: 100%;
+          // }
+          //display: flex;
+          //align-items: center;
+          //justify-content: center;
+          transition: all .25s ease-out;
+          span {          
+            position: relative;
+            padding-left: 42px;
+            &:before {
+              content: '';
+              position: absolute;          
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0; 
+              $size: 32px;
+              width: $size;
+              height: $size;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+      .detail-phone {
+        a {
+          span {
+            //font-size: 14px !important;
+            //padding-left: 36px;
+            &:before {
+              background-image: $phone;    
+              //left: 0;       
+            }
+          }
+        } 
+      }
+      .detail-email {
+        a {
+          span {
+            //font-size: 16px !important;
+            //padding-left: 44px;
+            &:before {
+              background-image: $email;  
+              //left: 0;           
+            }
+          }
+        } 
+      }       
+      .footer-submenu {
+        @media(min-width: 992px) {
+          display: block !important;
+        }
+      }     
+    }
+    .top-content {
+      order: 1;
+      background-color: #111111;      
+      .declaimer {
+        .site-p {          
+          color: rgba(255,255,255,.5) !important;
+        }
+      }
+    }
+  }
+}
+
+// BUTTONS
+.btn-item  {
+  transition: all .25s ease-out !important;
+}
+
+@import 'cta';
+@import 'reviews';

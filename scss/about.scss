@@ -1,0 +1,96 @@
+.team {
+  padding-block: 80px 55px;
+  @media(max-width: 575px) {
+    padding-block: 55px 45px;
+  }
+  .site-title {
+    margin-bottom: 30px;
+    text-align: center;
+    @media(max-width: 575px) {
+      margin-bottom: 20px;
+    }
+  }
+  .list-agents {
+    display: flex;
+    flex-flow: row wrap;    
+    justify-content: center;
+    margin-inline: -1.5%;
+    .list-agent-card {
+      padding-inline: 1.5%;
+      padding-bottom: 65px;
+      flex: 0 0 33%;  
+      max-width: 400px;
+      @media(max-width: 991px) {
+        flex: 0 0 50%;  
+      }   
+      @media(max-width: 575px) {
+        flex: 0 0 100%;  
+        padding-bottom: 50px;
+        max-width: 360px;
+        margin-inline: auto;
+      } 
+      
+    }
+    .agent-img { 
+      display: block;
+      position: relative;      
+      border-radius: 3px;
+      height: 100%;
+      width: 100%;       
+      &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-color: #000;
+        border-radius: 3px;
+        opacity: 0;
+        transition: all .25s ease-out;
+      }
+      img {
+        aspect-ratio: 345/380;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        box-shadow: 4px 6px 10px rgba(0,0,0,0.2);
+        transition: all .25s ease-out;
+      }
+      &:hover {
+        &:before {
+          opacity: .5;
+        }        
+        .agent-info {
+          bottom: calc(50% - 22px);
+        }
+      }
+    }
+    .agent-info {
+      font-size: 18px;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      bottom: -17px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      background-color: var(--primary);
+      width: max-content;
+      min-width: 220px;
+      height: 44px;
+      border-radius: 2px;
+      box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+      align-content: center;      
+      transition: all .25s ease-out;
+      &:hover {
+        background-color: var(--primary-hover);
+      }
+    }
+    .agent-name {
+      font-family: var(--mg-title-font);
+    }
+  }
+}
+
+
