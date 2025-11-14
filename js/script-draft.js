@@ -1,33 +1,9 @@
-// Add id to contact form section
-function addContactId() {
-  const targets = document.querySelectorAll('.md-form.layout3.mg-bg, .md-form.layout10.mg-bg');
-  let added = false;
-
-  targets.forEach(target => {
-    if (!target.id) {
-      target.id = 'contact';
-      added = true;
-    }
-  });
-
-  return added;
-}
-
-window.addEventListener('load', () => {
-  if (addContactId()) return;
-
-  const interval = setInterval(() => {
-    if (addContactId()) {
-      clearInterval(interval);
-    }
-  }, 300);
-});
-
 // CONTACT FORM
 function loadLoftyAssets(onComplete) {
   const cssFiles = [
     "//static.chimeroi.com/site-ssr/modules/md-form/layout3-78b8b5f7.css",
-    "//static.chimeroi.com/site-ssr/modules/md-form/get-more-info-v4-d11a9723.css"
+    "//static.chimeroi.com/site-ssr/modules/md-form/get-more-info-v4-d11a9723.css",
+    "https://cdn.jsdelivr.net/gh/e-barth/power-real-estate-group/css/global.min.css"
   ];
 
   const jsFiles = [
@@ -98,8 +74,7 @@ function loadContactForm() {
   appendScript();
 }
 
-loadLoftyAssets(() => {
-  console.log("Lofty JS finished loading — now loading contact-form.js");
+loadLoftyAssets(() => {  
   loadContactForm();
 });
 
