@@ -82,12 +82,13 @@ header {
       }
       .submit {
         visibility: hidden;
+        cursor: not-allowed;
       }
     }    
   }
   .submit {
-    background-color: var(--primary);
-    color: #fff;
+    background-color: var(--primary) !important;
+    color: #fff !important;
     visibility: visible;     
   }      
 }
