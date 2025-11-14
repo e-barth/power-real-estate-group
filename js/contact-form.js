@@ -1,11 +1,10 @@
+// Contac Form
 (function () {
 
-  // ---- CONFIGURATION ----
   const TARGET_SELECTOR = "footer.md-footer.layout2:not(.inner)";
   const MAX_ATTEMPTS = 30; 
   const INTERVAL = 100;   
-
-  // ---- YOUR FORM HTML ----
+  
   const formHTML = `
     <div id="contact" class="md-form layout3 mg-bg"
     style="background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url(&quot;https://cdn.chime.me/image/fs/sitebuild/2024522/6/original_7ffdb5e5-510e-4e59-8fe8-6f69e8216aec-png.webp&quot;); padding-top: 80px; padding-bottom: 80px; --g-primary-color: #fff; --g-text-color: rgba(255,255,255,0.7); --g-tip-color: rgba(168,168,168,1); --g-btn-background: #fff; --g-btn-color: #191919; --g-bg-color: #191919; --input-border-color: rgba(218, 218, 218, 0.5);"
@@ -63,7 +62,8 @@
           <div class="custom-disclaimer-list"></div>
         </div>
         <div class="submit-content">
-          <div class="submit-box disabled"><button class="submit">SEND A MESSAGE</button></div>
+          <div class="submit-box disabled">
+          <button class="submit">SEND A MESSAGE</button></div>
         </div>
       </form>
       <div class="form-toast toast-mark" style="display:none;">
@@ -108,21 +108,40 @@
 
 })();
 
+// Enable Submit button
 function enableSubmitOnCheckbox() {
-  const checkbox = document.querySelector('input.checkbox');
-  const submitBtn = document.querySelector('button.submit');
 
-  if (!checkbox || !submitBtn) return;
+  function onChange(e) {
+    const target = e.target;
+    if (!target || !target.matches('input.checkbox')) return;
 
-  checkbox.addEventListener('change', () => {
+    const checkbox = target;
+    const form = checkbox.closest('form');
+    const submitBox = form?.querySelector('.submit-box');
+
+    if (!submitBox) return;
+
     if (checkbox.checked) {
       checkbox.classList.remove('unchecked');
-      submitBtn.classList.remove('disabled');
-    } else {      
+      submitBox.classList.remove('disabled');
+    } else {
       checkbox.classList.add('unchecked');
-      submitBtn.classList.add('disabled');
+      submitBox.classList.add('disabled');
     }
-  });
+  }
+
+  document.addEventListener('change', onChange, true);
+
+  function initialize() {
+    const checkbox = document.querySelector('input.checkbox');
+    if (!checkbox) return;
+    const evt = new Event('change', { bubbles: true });
+    checkbox.dispatchEvent(evt);
+  }
+
+  initialize();
+  setTimeout(initialize, 150);
+  setTimeout(initialize, 400);
 }
 
 enableSubmitOnCheckbox();
