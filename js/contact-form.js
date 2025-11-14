@@ -3,7 +3,7 @@ const formHTML = `
 `;
 
 function initFooterForm() {
-  const target = document.querySelector("footer.md-footer:not(.inner)");
+  const target = document.querySelector(".md-footer.layout2:not(.inner)");
   if (!target) return;
 
   target.insertAdjacentHTML("beforebegin", formHTML);
