@@ -63,7 +63,8 @@
         </div>
         <div class="submit-content">
           <div class="submit-box disabled">
-          <button class="submit">SEND A MESSAGE</button></div>
+            <button class="submit">SEND A MESSAGE</button>
+          </div>
         </div>
       </form>
       <div class="form-toast toast-mark" style="display:none;">
