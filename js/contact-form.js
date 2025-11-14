@@ -45,7 +45,7 @@
           <div class="tcpa-consent">
             <div class="noParty disclaimer-item consent-item noTop">
               <div class="checkbox-wrapper">
-                <input type="checkbox" name="agreement" id="agreement">
+                <input class="checkbox unchecked" type="checkbox" name="agreement" id="agreement">
               </div>
               <div class="disclaimer-content party-consent" style="--g-text-color:rgba(168,168,168,1);">
                 <p>By checking this box, I agree by electronic signature to the <a
@@ -63,7 +63,7 @@
           <div class="custom-disclaimer-list"></div>
         </div>
         <div class="submit-content">
-          <div class="submit-box"><button class="submit">SEND A MESSAGE</button></div>
+          <div class="submit-box"><button class="submit disabled">SEND A MESSAGE</button></div>
         </div>
       </form>
       <div class="form-toast toast-mark" style="display:none;">
@@ -107,3 +107,22 @@
   });
 
 })();
+
+function enableSubmitOnCheckbox() {
+  const checkbox = document.querySelector('input.checkbox');
+  const submitBtn = document.querySelector('button.submit');
+
+  if (!checkbox || !submitBtn) return;
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      checkbox.classList.remove('unchecked');
+      submitBtn.classList.remove('disabled');
+    } else {      
+      checkbox.classList.add('unchecked');
+      submitBtn.classList.add('disabled');
+    }
+  });
+}
+
+enableSubmitOnCheckbox();
