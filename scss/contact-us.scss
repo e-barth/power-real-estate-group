@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  flex-direction: column;
+  header {
+    order: 0;
+  }
+  .md-form {
+    order: 1;
+  }
+  .md-agent-contact {
+    order: 2;
+  }
+  footer:not(.inner) {
+    order: 3
+  }
+}
