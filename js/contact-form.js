@@ -44,7 +44,7 @@
         <div class="disclaimer-wrap opt-in">
           <div class="tcpa-consent">
             <div class="noParty disclaimer-item consent-item noTop">
-              <div class="checkbox-li">
+              <div class="checkbox-wrapper">
                 <input type="checkbox" name="agreement" id="agreement">
               </div>
               <div class="disclaimer-content party-consent" style="--g-text-color:rgba(168,168,168,1);">
