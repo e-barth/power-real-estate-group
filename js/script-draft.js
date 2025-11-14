@@ -22,3 +22,18 @@ window.addEventListener('load', () => {
     }
   }, 300);
 });
+
+// Add Contac Form
+(function () {
+  var s = document.createElement("script");
+  s.src = "https://raw.githubusercontent.com/e-barth/power-real-estate-group/refs/heads/main/js/contact-form.js";
+  s.defer = true;
+  function appendScript() {
+    if (document.body) {
+      document.body.appendChild(s);
+    } else {
+      setTimeout(appendScript, 1000);
+    }
+  }
+  appendScript();
+})();
