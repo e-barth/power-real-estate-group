@@ -209,3 +209,6 @@ document.addEventListener("form:success", function (e) {
   if (toast) toast.style.display = "block";
 });
 
+loadFormAssets(() => {
+  console.log("Lofty assets loaded.");
+});

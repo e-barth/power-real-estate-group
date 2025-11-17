@@ -1,5 +1,5 @@
 function loadContactForm() {
-  const scriptUrl = "https://cdn.jsdelivr.net/gh/e-barth/power-real-estate-group/js/contact-form-v02.js";
+  const scriptUrl = "https://cdn.jsdelivr.net/gh/e-barth/power-real-estate-group/js/contact-form.js";
 
   if (document.querySelector(`script[src="${scriptUrl}"]`)) return;
 
@@ -15,6 +15,4 @@ function loadContactForm() {
   appendScript();
 }
 
-loadFormAssets(() => {
-  loadContactForm();
-});
+loadContactForm();
