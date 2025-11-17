@@ -1,9 +1,66 @@
-(function () {
+function loadFormAssets(onComplete) {
+  const cssFiles = [
+    "//static.chimeroi.com/site-ssr/modules/md-form/layout3-78b8b5f7.css",
+    "//static.chimeroi.com/site-ssr/modules/md-form/get-more-info-v4-d11a9723.css",
+    "https://cdn.jsdelivr.net/gh/e-barth/power-real-estate-group/css/global.min.css"
+  ];
 
+  const jsFiles = [
+    "https://static.chimeroi.com/site-ssr/modules/md-form/layout3-78b8b5f7.js"
+  ];
+
+  function loadFormCss() {
+    if (!document.head) return setTimeout(loadFormCss, 100);
+
+    cssFiles.forEach(href => {
+      if (!document.querySelector(`link[href="${href}"]`)) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        document.head.appendChild(link);
+      }
+    });
+  }
+
+  function loadFormJs(i = 0) {
+    if (i >= jsFiles.length) {
+      if (typeof onComplete === "function") onComplete();
+      return;
+    }
+
+    const src = jsFiles[i];
+
+    if (document.querySelector(`script[src="${src}"]`)) {
+      return loadFormJs(i + 1);
+    }
+
+    const script = document.createElement("script");
+    script.src = src;
+    script.defer = true;
+
+    script.onload = () => loadFormJs(i + 1);
+    script.onerror = () => {
+      console.warn("Failed loading Lofty JS:", src);
+      loadFormJs(i + 1);
+    };
+
+    document.body.appendChild(script);
+  }
+
+  function start() {
+    if (!document.body) return setTimeout(start, 100);
+    loadFormCss();
+    loadFormJs();
+  }
+
+  start();
+}
+
+(function () {
   const TARGET_SELECTOR = "footer.md-footer.layout2:not(.inner)";
-  const MAX_ATTEMPTS = 30; 
-  const INTERVAL = 100;   
-  
+  const MAX_ATTEMPTS = 30;
+  const INTERVAL = 100;
+
   const formHTML = `
     <div id="contact" class="md-form layout3 mg-bg"
     style="background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url(&quot;https://cdn.chime.me/image/fs/sitebuild/2024522/6/original_7ffdb5e5-510e-4e59-8fe8-6f69e8216aec-png.webp&quot;); padding-top: 80px; padding-bottom: 80px; --g-primary-color: #fff; --g-text-color: rgba(255,255,255,0.7); --g-tip-color: rgba(168,168,168,1); --g-btn-background: #fff; --g-btn-color: #191919; --g-bg-color: #191919; --input-border-color: rgba(218, 218, 218, 0.5);"
@@ -79,10 +136,7 @@
 
   function waitForFooter(attempt = 0) {
     const footer = document.querySelector(TARGET_SELECTOR);
-
-    if (footer) {
-      return Promise.resolve(footer);
-    }
+    if (footer) return Promise.resolve(footer);
 
     if (attempt >= MAX_ATTEMPTS) {
       console.warn("Contact form: footer not found.");
@@ -90,9 +144,7 @@
     }
 
     return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(waitForFooter(attempt + 1));
-      }, INTERVAL);
+      setTimeout(() => resolve(waitForFooter(attempt + 1)), INTERVAL);
     });
   }
 
@@ -105,37 +157,36 @@
     if (!footer) return;
     insertForm(footer);
   });
-
 })();
 
-
 function enableSubmitOnCheckbox() {
-
-  function onChange(e) {
+  function handleChange(e) {
     const target = e.target;
-    if (!target || !target.matches('input.checkbox')) return;
+    if (!target || !target.matches("input.checkbox")) return;
 
     const checkbox = target;
-    const form = checkbox.closest('form');
-    const submitBox = form?.querySelector('.submit-box');
+    const form = checkbox.closest("form");
+    const submitBox = form?.querySelector(".submit-box");
 
     if (!submitBox) return;
 
     if (checkbox.checked) {
-      checkbox.classList.remove('unchecked');
-      submitBox.classList.remove('disabled');
+      checkbox.classList.remove("unchecked");
+      submitBox.classList.remove("disabled");
     } else {
-      checkbox.classList.add('unchecked');
-      submitBox.classList.add('disabled');
+      checkbox.classList.add("unchecked");
+      submitBox.classList.add("disabled");
     }
   }
 
-  document.addEventListener('change', onChange, true);
+  document.addEventListener("change", handleChange, true);
+
 
   function initialize() {
-    const checkbox = document.querySelector('input.checkbox');
+    const checkbox = document.querySelector("input.checkbox");
     if (!checkbox) return;
-    const evt = new Event('change', { bubbles: true });
+
+    const evt = new Event("change", { bubbles: true });
     checkbox.dispatchEvent(evt);
   }
 
@@ -145,3 +196,7 @@ function enableSubmitOnCheckbox() {
 }
 
 enableSubmitOnCheckbox();
+
+loadFormAssets(() => {
+  console.log("Lofty assets loaded.");
+});
