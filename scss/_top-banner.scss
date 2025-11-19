@@ -3,9 +3,13 @@
 @import 'cta';
 
 .md-hero.layout2.mg-bg {
-
-  @extend .md-cta;  
   
+  @extend .md-cta;  
+
+  .banner.single {
+    min-height: 50vh !important; 
+    height: fit-content !important;   
+  }  
   .banner-button-v2 {      
     gap: 7px !important;
   }
