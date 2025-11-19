@@ -1,0 +1,45 @@
+.md-hero ~ .md-hero {
+  .btn-item {
+    min-width: 244px !important;
+  }
+}
+
+#mortgage-calculator,
+#affordability-calculator {
+  scroll-margin-top: 96px;
+}
+
+.md-calculator.mortgage,
+.md-calculator.affordability,
+.md-house.grid {
+  padding-block: 70px 80px;
+  @media(max-width: 575px) {
+    padding-block: 30px 40px;
+  }
+  .mg-title {
+    & ~ .description-container {
+      max-width: 900px;
+      margin-inline: auto;
+      margin-bottom: 60px !important;
+      opacity: .85;
+      line-height: 1.65 !important;
+      span {
+        @media(min-width: 768px) {
+          font-size: 18px !important;
+        }
+      }
+    }
+  }
+}
+
+.md-calculator.affordability {
+  background-color: var(--light) !important;
+}
+
+.md-house {
+  .house-title {
+    h2 {
+      margin-bottom: .8em;
+    }
+  }
+}
