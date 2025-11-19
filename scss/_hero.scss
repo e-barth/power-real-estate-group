@@ -1,4 +1,6 @@
-.md-cta.layout1.mg-bg {  
+// HERO SECTIONS - BANNER AND CTA
+
+.md-cta.layout1.mg-bg, .md-hero.layout2.mg-bg {  
   .banner.single {
     padding-block: 70px;
     @media(max-width: 575px) {
@@ -22,4 +24,20 @@
   .site-subtitle {
     opacity: .85;
   } 
+}
+
+.md-hero.layout2.mg-bg {
+  .banner.single {
+    min-height: 50vh !important; 
+    height: fit-content !important;   
+  }  
+  .banner-button-v2 {      
+    gap: 7px !important;
+  }
+}
+
+.md-header.transparent ~ .md-hero.layout2.mg-bg {
+  .banner.single {
+    padding-block: 140px 70px;
+  }
 }
