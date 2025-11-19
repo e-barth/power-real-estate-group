@@ -24,9 +24,9 @@ header {
 
 // FORM
 #contact {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 120px !important;
   @media(max-width: 575px) {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 96px !important;
   } 
 }
 
@@ -43,15 +43,15 @@ header {
   .input-content {
     display: flex;
     flex-direction: column;
-    margin-inline: 0;
+    margin-inline: 0 !important;
   }
   .basic-info {
     width: 100% !important;
-    margin-inline: 0;  
+    margin-inline: 0 !important;  
   }
   .message {
     width: 100% !important;
-    margin-inline: 0;
+    margin-inline: 0 !important;
     textarea {     
       min-height: 100px;
     }
