@@ -1,18 +1,16 @@
-function loadContactForm() {
-  const scriptUrl = "https://cdn.jsdelivr.net/gh/e-barth/power-real-estate-group/js/contact-form.js";
-
-  if (document.querySelector(`script[src="${scriptUrl}"]`)) return;
-
-  function appendScript() {
-    if (!document.body) return setTimeout(appendScript, 100);
-
-    const s = document.createElement("script");
-    s.src = scriptUrl;
-    s.defer = true;
-    document.body.appendChild(s);
+function addGlobalStylesheet() {
+  const href = "https://cdn.jsdelivr.net/gh/e-barth/power-real-estate-group/css/global.min.css";
+  function inject() {
+    if (!document.head) {
+      return setTimeout(inject, 100);
+    }   
+    if (!document.querySelector(`link[href="${href}"]`)) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    }
   }
-
-  appendScript();
+  inject();
 }
-
-loadContactForm();
+addGlobalStylesheet();

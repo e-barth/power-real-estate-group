@@ -1,5 +1,9 @@
 @import 'variables';
 @import 'icons';
+@import 'utilities';
+@import 'top-banner';
+@import 'cta';
+@import 'reviews';
 
 // HEADER
 header {
@@ -52,45 +56,13 @@ header {
     textarea {     
       min-height: 100px;
     }
-  }
-  .checkbox-wrapper {
-    .checkbox {
-      margin: 3px 6px 0 0;
-    }
-  }
+  }  
   .submit-content {
     display: flex;
     justify-content: center;           
-  }
-  .submit-box {
-    position: relative;    
-    &.disabled {
-      &:before {
-        content: 'SEND A MESSAGE';
-        font-size: 13px;      
-        width: 200px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        color: #fff;
-        background: var(--primary);
-        cursor: not-allowed;
-        opacity: .4;
-      }
-      .submit {        
-        visibility: hidden;
-        cursor: not-allowed;
-      }
-    }    
-  }
+  }  
   .submit {
-    background-color: var(--primary) !important;
-    color: #fff !important;
-    visibility: visible;     
+    color: #fff !important;         
   }      
 }
 
@@ -175,7 +147,7 @@ header {
 // BUTTONS
 .btn-item  {
   transition: all .25s ease-out !important;
+  width: max-content !important;
+  min-width: 200px !important;
+  font-size: 15px !important;
 }
-
-@import 'cta';
-@import 'reviews';

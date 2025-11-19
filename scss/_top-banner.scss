@@ -1,0 +1,18 @@
+// BANNER AT THE TOP OF EACH PAGE
+
+@import 'cta';
+
+.md-hero.layout2.mg-bg {
+
+  @extend .md-cta;  
+  
+  .banner-button-v2 {      
+    gap: 7px !important;
+  }
+}
+
+.md-header.transparent ~ .md-hero.layout2.mg-bg {
+  .banner.single {
+    padding-block: 140px 70px;
+  }
+}

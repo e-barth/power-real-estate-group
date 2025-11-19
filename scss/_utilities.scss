@@ -1,0 +1,45 @@
+// LAYOUT
+.section-content {
+  padding-block: 80px;
+  @media(max-width: 575px) {
+    padding-block: 40px;
+  }
+}
+
+// TYPOGRAPHY
+.title-wrapper {  
+  margin-bottom: 60px !important;
+  @media(max-width: 575px) {
+    margin-bottom: 40px !important;
+  }  
+  margin-inline: auto;
+  max-width: 900px; 
+  .title {      
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(24px + 1vw) !important;
+    //font-weight: 700 !important;
+    margin-top: 0 !important;
+    margin-bottom: 22px !important;
+    text-wrap: balance;  
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-size: 18px !important;
+    line-height: 1.65 !important;
+    font-weight: 300;
+    opacity: .85;
+    @media (max-width: 575px) {
+      font-size: 15px !important;
+    }
+    text-wrap: pretty;         
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+// COLORS
+.bg-light {
+  background-color: var(--light);
+}
