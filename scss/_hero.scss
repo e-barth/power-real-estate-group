@@ -2,9 +2,12 @@
 
 .md-cta.layout1.mg-bg, .md-hero.layout2.mg-bg {  
   .banner.single {
-    padding-block: 70px;
+    min-height: 50vh !important; 
+    height: max-content !important;  
+    padding-block: 80px;
     @media(max-width: 575px) {
-    padding-block: 50px;
+      min-height: max-content !important; 
+      padding-block: 50px;
     }
   } 
   .f-col {
@@ -26,11 +29,7 @@
   } 
 }
 
-.md-hero.layout2.mg-bg {
-  .banner.single {
-    min-height: 50vh !important; 
-    height: fit-content !important;   
-  }  
+.md-hero.layout2.mg-bg {   
   .banner-button-v2 {      
     gap: 7px !important;
   }

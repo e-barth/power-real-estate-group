@@ -1,9 +1,9 @@
-.button-more {
-  text-transform: uppercase;
-  transition: all .25s ease-out !important;
-}
-
 .home.template1 .page-content {
+
+  scroll-margin-top: 120px !important;
+  @media(max-width: 575px) {
+    scroll-margin-top: 96px !important;
+  } 
 
   .md-hero {
     .banner {
@@ -126,8 +126,12 @@
   #contact {
     scroll-margin-top: -500px !important;
   }
-}
 
+  .button-more {
+    text-transform: uppercase;
+    transition: all .25s ease-out !important;
+  }
+}
 
 // Estilo que já existia na página. Checar se ainda é valido, pois troquei o bloco de testimonials.
 // .social-container {
