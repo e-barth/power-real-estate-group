@@ -1,11 +1,8 @@
 .md-hero ~ .md-custom-code ~ .md-custom-code {
-  background-image: linear-gradient(rgba(#000, .88)), url('https://cdn.chime.me/image/fs/sitebuild/202459/7/original_3b539a14-9b4d-4321-af82-5a85a3b2fa1f-jpeg.webp') !important;
-  background-position: center;
+  background-image: linear-gradient(rgba(#000, .88)), url('https://cdn.lofty.com/image/fs/844765368895177/website/113526/cmsbuild/20251121_7861fec11d684af7.jpeg') !important;
+  background-position: 50% 0%;
   background-repeat: no-repeat;
-  background-size: cover; 
-  @media(max-width: 767px) {
-    background-image: linear-gradient(rgba(#000, .88)), url('https://cdn.chime.me/image/fs/sitebuild/202459/7/original_3b539a14-9b4d-4321-af82-5a85a3b2fa1f-jpeg.webp') !important;
-  } 
+  background-size: cover;   
 }
 
 #why-power {    
@@ -55,23 +52,6 @@
 
 #buying-steps {
   $padding-timeline: 6.5%;
-
-  position: relative;
-  &:before {
-    content: '';
-    background-image: linear-gradient(rgba(#000, .88)), url('https://cdn.chime.me/image/fs/sitebuild/202459/7/original_3b539a14-9b4d-4321-af82-5a85a3b2fa1f-jpeg.webp') !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    @media(max-width: 767px) {
-      background-image: linear-gradient(rgba(#000, .88)), url('https://cdn.chime.me/image/fs/sitebuild/202459/7/original_3b539a14-9b4d-4321-af82-5a85a3b2fa1f-jpeg.webp') !important;
-    } 
-    position: absolute;
-    inset: 0;
-    width: 100vw;  
-    left: 50%;
-    transform: translateX(-50%)  
-  }
 
   .section-content {
     padding: 80px 0 100px;
