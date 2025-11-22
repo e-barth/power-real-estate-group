@@ -7,21 +7,26 @@
     padding-block: 80px;
     @media(max-width: 575px) {
       min-height: max-content !important; 
-      padding-block: 50px;
+      padding-block: 60px;
     }
   } 
   .f-col {
     max-width: 900px;
   }    
   .site-title {
-    h2 {
-      font-size: clamp(28px, 5vw, 48px) !important;        
+    h1, h2 {
       line-height: 1.15;
       text-transform: uppercase;
       text-wrap: balance;
       span {
         font-size: 1em !important;
       }
+    }
+    h1 {
+      font-size: clamp(32px, 5vw, 48px) !important;        
+    }
+    h2 {
+      font-size: clamp(28px, 5vw, 44px) !important;        
     }
   }
   .site-subtitle {
@@ -37,6 +42,9 @@
 
 .md-header.transparent ~ .md-hero.layout2.mg-bg {
   .banner.single {
-    padding-block: 140px 70px;
+    padding-block: 160px 80px;
+    @media(max-width: 575px) {
+      padding-block: 140px 60px;
+    }
   }
 }
