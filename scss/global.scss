@@ -39,30 +39,30 @@ header {
   form {
     max-width: 800px;
     margin-inline: auto;
-  }
-  .input-content {
-    display: flex;
-    flex-direction: column;
-    margin-inline: 0 !important;
-  }
-  .basic-info {
-    width: 100% !important;
-    margin-inline: 0 !important;  
-  }
-  .message {
-    width: 100% !important;
-    margin-inline: 0 !important;
-    textarea {     
-      min-height: 100px;
+    .input-content {
+      display: flex;
+      flex-direction: column;
+      margin-inline: 0 !important;
     }
-  }  
-  .submit-content {
-    display: flex;
-    justify-content: center;           
-  }  
-  .submit {
-    color: #fff !important;         
-  }      
+    .basic-info {
+      width: 100% !important;
+      margin-inline: 0 !important;  
+    }
+    .message {
+      width: 100% !important;
+      margin-inline: 0 !important;
+      textarea {     
+        min-height: 100px;
+      }
+    }  
+    .submit-content {
+      display: flex;
+      justify-content: center;           
+      .submit {
+        color: #fff !important;         
+      }      
+    }  
+  }
 }
 
 // FOOTER
